@@ -1,35 +1,75 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Welcome to the Book Database</title>
-
+    <title>Employee Directory</title>
 </head>
 <body>
-<form action="#" th:action="@{/adddepart}" th:object="${department}" method="post">
+<h1>Employee Directory.</h1>
 
-    <div class="form-group">
-
-        <label class="form-label form-label--required">
-            Department:
-        </label>
-        <div>
-            <select data-placeholder="Department" style="width:115px;" tabindex="2" th:field="*{departname}">
-                <option value="Operations">Operations</option>
-                <option value="Accounting">Accounting</option>
-                <option value="Human Resources">Human Resources</option>
-            </select>
-
-        </div>
+<h1>Result</h1>
 
 
-    </div>
+<table>
+    <tr>
+
+        <th>Name</th>
+        <td>Actions</td>
+    </tr>
+    <tr th:each="conte:${depalist}">
+        <td th:text="${conte.departname}"></td>
+        <!--/*@thymesVar id="department" type=""*/-->
+       <td>
+        <a th:href="@{/addpersons/{id}(id=${conte.id})}">Add a person to this Department.</a>
+           <a th:href="@{/detailperson/{id}(id=${conte.id})}">Details</a>
+       </td>
+    </tr>
+</table>
 
 
-    <p><input type="submit" value="Enter" /> <input type="reset" value="Reset" /> </p>
 
+<p><a href="/addhead">Add a New Department.</a></p>
 
-</form>
+<!--<a th:href="@{/addhead/{id}(id=${conte.id})}">Add a New Department.</a>-->
+
+<p><a href="/">Go back to main menu.</a></p>
+
 
 </body>
 </html>
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8"/>-->
+    <!--<title>Welcome to the Book Database</title>-->
+
+<!--</head>-->
+<!--<body>-->
+<!--<form action="#" th:action="@{/adddepart}" th:object="${department}" method="post">-->
+
+    <!--<div class="form-group">-->
+
+        <!--<label class="form-label form-label&#45;&#45;required">-->
+            <!--Department:-->
+        <!--</label>-->
+        <!--<div>-->
+            <!--<select data-placeholder="Department" style="width:115px;" tabindex="2" th:field="*{departname}">-->
+                <!--<option value="Operations">Operations</option>-->
+                <!--<option value="Accounting">Accounting</option>-->
+                <!--<option value="Human Resources">Human Resources</option>-->
+            <!--</select>-->
+
+        <!--</div>-->
+
+
+    <!--</div>-->
+
+
+    <!--<p><input type="submit" value="Enter" /> <input type="reset" value="Reset" /> </p>-->
+
+
+<!--</form>-->
+
+<!--</body>-->
+<!--</html>-->

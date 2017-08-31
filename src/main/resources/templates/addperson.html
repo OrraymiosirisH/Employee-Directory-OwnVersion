@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Add an Employee</title>
+    <title>Add new Movie.</title>
 </head>
 <body>
 
@@ -17,27 +17,39 @@
 
     <p>Cell Phone : <input type="text" th:field="*{cellphone}" /></p>
     <p>Work Phone : <input type="text" th:field="*{workphone}" /></p>
-    <p>Work Phone : <input type="text" th:field="*{workphone}" /></p>
+    <p>Position : <input type="text" placeholder="General Labor" required="true" value="General Labor" readonly="true" th:field="*{position}" /></p>
+
+
+    <!--<p th:text = "${message}">Please Chosse an option:</p>-->
+
+    <!--@RequestMapping("/")-->
+    <!--public String index(Model model)-->
+    <!--{-->
+    <!--String sendToIndex = "WELCOME to RoboResume!!!(from controler)";-->
+    <!--model.addAttribute("message", sendToIndex);-->
+    <!--return "index";-->
+    <!--}-->
+
 
     <!--<div class="form-group">-->
 
-        <!--<label class="form-label form-label&#45;&#45;required">-->
-            <!--Position:-->
-        <!--</label>-->
-        <!--<div>-->
-            <!--<select data-placeholder="Department" style="width:115px;" tabindex="2" th:field="*{departname}">-->
-                <!--<option value="Manager">Manager</option>-->
-                <!--<option value="General Labor">Gral. Laboral</option>-->
-                <!--<option value="Team Leader">Hu</option>-->
-            <!--</select>-->
-
-        <!--</div>-->
+    <!--<label class="form-label form-label&#45;&#45;required">-->
+    <!--Position:-->
+    <!--</label>-->
+    <!--<div>-->
+    <!--<select data-placeholder="Department" style="width:115px;" tabindex="2" th:field="*{departname}">-->
+    <!--<option value="Manager">Manager</option>-->
+    <!--<option value="General Labor">Gral. Laboral</option>-->
+    <!--<option value="Team Leader">Hu</option>-->
+    <!--</select>-->
 
     <!--</div>-->
-    <p><input type="submit" value="Save and Add another Movie" /> <input type="reset" value="Reset" /></p>
+
+    <!--</div>-->
+    <p><input type="submit" value="Save and Add Person" /> <input type="reset" value="Reset" /></p>
 
 
-    <p><a href="/menu">Return</a></p>
+    <p><a href="/adddeparment">Return</a></p>
 
 
 </form>

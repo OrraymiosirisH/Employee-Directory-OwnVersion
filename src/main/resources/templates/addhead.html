@@ -2,42 +2,21 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Add new Movie.</title>
+    <title>Add new Departmant.</title>
 </head>
 <body>
 
 
-<form action="#" th:action="@{/assignhead}" th:object="${person}" method="post">
+<form action="#" th:action="@{/addhead}" th:object="${department}" method="post">
 
 
-    <input type="text" th:field="*{department.id}">
-    <p>First Name: <input type="text" th:field="*{firstname}" /></p>
-
-    <p>Last Namer: <input type="text" th:field="*{lastname}" /></p>
-
-    <p>Cell Phone : <input type="text" th:field="*{cellphone}" /></p>
-    <p>Work Phone : <input type="text" th:field="*{workphone}" /></p>
-    <p>Work Phone : <input type="text" th:field="*{workphone}" /></p>
-
-    <!--<div class="form-group">-->
-
-    <!--<label class="form-label form-label&#45;&#45;required">-->
-    <!--Position:-->
-    <!--</label>-->
-    <!--<div>-->
-    <!--<select data-placeholder="Department" style="width:115px;" tabindex="2" th:field="*{departname}">-->
-    <!--<option value="Manager">Manager</option>-->
-    <!--<option value="General Labor">Gral. Laboral</option>-->
-    <!--<option value="Team Leader">Hu</option>-->
-    <!--</select>-->
-
-    <!--</div>-->
-
-    <!--</div>-->
-    <p><input type="submit" value="Save and Add another Movie" /> <input type="reset" value="Reset" /></p>
+    <p>DepartName: <input type="text" th:field="*{departname}" /></p>
 
 
-    <p><a href="/menu">Return</a></p>
+    <p><input type="submit" value="Add a new Dept" /> <input type="reset" value="Reset" /></p>
+
+
+    <p><a href="/adddepartment">Return</a></p>
 
 
 </form>

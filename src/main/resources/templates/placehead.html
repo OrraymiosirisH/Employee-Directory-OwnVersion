@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Add new Departmant.</title>
+</head>
+<body>
+
+
+<form action="#" th:action="@{/placehead}" th:object="${department}" method="post">
+
+    <p><input type="hidden" th:field="*{id}"/></p>
+
+    <p>DepartName: <input type="text" readonly="true" th:field="*{departname}" /></p>
+
+
+    <div class="controls">
+        <select th:field="*{departhead}" class="form-control" name="example">
+            <option value="0">ALL</option>
+            <option th:each="employee : ${department.persons}"
+                    th:value="${employee.firstname}+' ' + ${employee.lastname}"
+                    th:text="${employee.firstname}+' ' + ${employee.lastname}">
+            </option>
+        </select>
+
+
+    <p><input type="submit" value="Place" /> <input type="reset" value="Reset" /></p>
+
+
+    <p><a href="/adddepartment">Return</a></p>
+
+
+</form>
+</body>
+</html>

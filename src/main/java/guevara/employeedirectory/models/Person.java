@@ -28,9 +28,8 @@ private String firstname;
     @Size(min = 2)
     private String workphone;
 
-//    @NotNull
-//    @Size(min = 2)
-//    private String position;
+
+private String position;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "deparment_id")
@@ -77,14 +76,13 @@ private String firstname;
     public void setWorkphone(String workphone) {
         this.workphone = workphone;
     }
+    public String getPosition() {
+       return position;
+   }
 
-//    public String getPosition() {
-//        return position;
-//    }
-//
-//    public void setPosition(String position) {
-//        this.position = position;
-//    }
+   public void setPosition(String position) {
+       this.position = position;
+  }
 
     public Department getDepartment() {
         return department;
